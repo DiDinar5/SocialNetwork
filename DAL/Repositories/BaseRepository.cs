@@ -8,7 +8,7 @@ namespace SocialNetwork.DAL.Repositories
 {
     public class BaseRepository
     {
-        protected T QueryFirstOrDefault<T>(string sql, object parameters = null)
+        protected T QueryFirstOrDefault<T>(string sql, object parameters = null)//Сначала запрос или по умолчанию
         {
             using (var connection = CreateConnection())
             {
@@ -17,7 +17,7 @@ namespace SocialNetwork.DAL.Repositories
             }
         }
 
-        protected List<T> Query<T>(string sql, object parameters = null)
+        protected List<T> Query<T>(string sql, object parameters = null)//запрос
         {
             using (var connection = CreateConnection())
             {
@@ -26,7 +26,7 @@ namespace SocialNetwork.DAL.Repositories
             }
         }
 
-        protected int Execute(string sql, object parameters = null)
+        protected int Execute(string sql, object parameters = null)//выполнять
         {
             using var connection = CreateConnection();
             connection.Open();

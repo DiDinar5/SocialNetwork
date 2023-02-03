@@ -24,6 +24,7 @@ namespace SocialNetwork.BLL.Services
         public void Register(UserRegistrationData userRegistrationData)
         {
             var all = this.userRepository.FindAll();
+        
             if (String.IsNullOrEmpty(userRegistrationData.FirstName))
                 throw new ArgumentNullException();
 
@@ -36,11 +37,11 @@ namespace SocialNetwork.BLL.Services
             if (String.IsNullOrEmpty(userRegistrationData.Email))
                 throw new ArgumentNullException();
 
-            if (userRegistrationData.Password.Length < 8)
-                throw new ArgumentNullException();
+         //   if (userRegistrationData.Password.Length < 8)
+           //     throw new ArgumentNullException();
 
-            if (!new EmailAddressAttribute().IsValid(userRegistrationData.Email))
-                throw new ArgumentNullException();
+        //    if (!new EmailAddressAttribute().IsValid(userRegistrationData.Email))
+          //      throw new ArgumentNullException();
 
             if (userRepository.FindByEmail(userRegistrationData.Email) != null)
                 throw new ArgumentNullException();

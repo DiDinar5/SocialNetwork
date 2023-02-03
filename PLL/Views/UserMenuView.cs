@@ -11,7 +11,7 @@ namespace SocialNetwork.PLL.Views
     {
         UserService userService;
         FriendService friendService;
-        
+
         public UserMenuView(UserService userService)
         {
             this.userService = userService;
@@ -27,6 +27,7 @@ namespace SocialNetwork.PLL.Views
                 Console.WriteLine("Просмотреть информацию о моём профиле (нажмите 1)");
                 Console.WriteLine("Редактировать мой профиль (нажмите 2)");
                 Console.WriteLine("Добавить в друзья (нажмите 3)");
+                Console.WriteLine("Посмотреть друзей (нажмите 13)");
                 Console.WriteLine("Написать сообщение (нажмите 4)");
                 Console.WriteLine("Просмотреть входящие сообщения (нажмите 5)");
                 Console.WriteLine("Просмотреть исходящие сообщения (нажмите 6)");
@@ -53,6 +54,12 @@ namespace SocialNetwork.PLL.Views
                             Program.addFriendsViews.Show(user);
                             break;
                         }
+                    case "13":
+                        {
+                            Program.showFriendsViews.Show(user);
+                            break;
+                        }
+
 
                     case "4":
                         {

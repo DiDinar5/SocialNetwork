@@ -24,7 +24,7 @@ namespace SocialNetwork.DAL.Repositories
     public interface IFriendRepository
     {
         int Create(FriendEntity friendEntity);
-        IEnumerable<FriendEntity> FindAllByUserId(int userId);
+        IEnumerable<FriendEntity> FindAllByUserId(int userId);//Найти все по идентификатору пользователя
         int Delete(int id);
     }
 }

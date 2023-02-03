@@ -21,16 +21,13 @@ namespace SocialNetwork.PLL.Views
         }
         public void Show(User user)
         {
-            var friendsEmail = new FriendsEmail();
-            var friends = new Friends();
-            
             Console.Write("Введите почтовый адрес друга: ");
-            friendsEmail.Email = Console.ReadLine();
+            string Email = Console.ReadLine();
             try
             {
-                friendService.AddFriend(friends,friendsEmail);
+                friendService.AddFriend(user.Id, Email);
                 SuccessMessage.Show("Друг успешно найден!");;
-                user = userService.FindByEmail(user.Email);
+                //user = userService.FindByEmail(user.Email);
             }
             catch(UserNotFoundException)
             {
